@@ -1,0 +1,31 @@
+--- SMR_ModelFactory.java
++++ SMR_ModelFactory.java
+@@ -26,6 +30,28 @@
+ 		mapTableModels.put(I_M_Sales_Locator.Table_Name, "org.semeru.model.X_M_Sales_Locator");
+ 		mapTableModels.put(I_i_ordertrx_temp.Table_Name, "org.semeru.model.X_i_ordertrx_temp");
+ 		mapTableModels.put(I_M_Brand.Table_Name, "org.semeru.model.X_M_Brand");
++		mapTableModels.put(I_SM_MPS.Table_Name, "org.semeru.model.X_SM_MPS");
++		mapTableModels.put(I_SM_MPSLine.Table_Name, "org.semeru.model.X_SM_MPSLine");
++		mapTableModels.put(I_SM_MRP.Table_Name, "org.semeru.model.X_SM_MRP");
++		mapTableModels.put(I_SM_MRPLine.Table_Name, "org.semeru.model.X_SM_MRPLine");
++		mapTableModels.put(I_SM_COLine.Table_Name, "org.semeru.model.X_SM_COLine");
++		mapTableModels.put(I_SM_BOMRelease.Table_Name, "org.semeru.model.X_SM_BOMRelease");
++		mapTableModels.put(I_SM_Production_Qty.Table_Name, "org.semeru.model.X_SM_Production_Qty");
++		mapTableModels.put(I_SM_STLine.Table_Name, "org.semeru.model.X_SM_STLine");
++		mapTableModels.put(I_SM_Product_Plan.Table_Name, "org.semeru.model.X_SM_Product_Plan");
++		mapTableModels.put(I_SM_Product_PlanLine.Table_Name, "org.semeru.model.X_SM_Product_PlanLine");
++		mapTableModels.put(I_SM_Machine_Capacity.Table_Name, "org.semeru.model.X_SM_Machine_Capacity");
++		mapTableModels.put(I_SM_Factory_Machine.Table_Name, "org.semeru.model.X_SM_Factory_Machine");
++		mapTableModels.put(I_SM_Factory_Plan.Table_Name, "org.semeru.model.X_SM_Factory_Plan");
++		mapTableModels.put(I_SM_Forecast.Table_Name, "org.semeru.model.X_SM_Forecast");		
++		mapTableModels.put(I_SM_CustOrd_Upload.Table_Name, "org.semeru.model.X_SM_CustOrd_Upload");
++		mapTableModels.put(I_mob_trx_registration.Table_Name, "org.semeru.model.X_mob_trx_registration");
++		mapTableModels.put(I_mob_mst_package.Table_Name, "org.semeru.model.X_mob_mst_package");
++
++		mapTableModels.put(I_SM_SemeruPOS.Table_Name, "org.semeru.pos.model.X_SM_SemeruPOS");
++		mapTableModels.put(I_SM_SemeruPOSLine.Table_Name, "org.semeru.pos.model.X_SM_SemeruPOSLine");
++		mapTableModels.put(I_SM_SemeruTemp.Table_Name, "org.semeru.pos.model.X_SM_SemeruTemp");
++		mapTableModels.put(I_SM_SemeruLineTemp.Table_Name, "org.semeru.pos.model.X_SM_SemeruLineTemp");
+ 
+ 		
+ 	}
