@@ -46,9 +46,10 @@ public class SMR_ProcessEmailActiveUser extends SvrProcess{
 		
 		
 		StringBuilder SQLGetUser = new StringBuilder();
-		SQLGetUser.append("SELECT ad.AD_User_ID, mob.mob_trx_registration_id,mob.email_sales");
+		SQLGetUser.append("SELECT ad.AD_User_ID, mob.mob_trx_registration_id,mob.email_sales,cus.passtring");
 		SQLGetUser.append(" FROM AD_User ad");
 		SQLGetUser.append(" LEFT JOIN mob_trx_registration mob ON mob.user_email = ad.name");
+		SQLGetUser.append(" LEFT JOIN semerulite.customer cus ON cus.email = mob.user_email");
 		SQLGetUser.append(" WHERE mob.IsEmailed = 'N'");
 
 		
@@ -75,9 +76,9 @@ public class SMR_ProcessEmailActiveUser extends SvrProcess{
 					
 					if(Type.equals("N") || Type.equals("G")) {
 					
-					Random rand  = new Random();
-					Integer rand_pass  = rand.nextInt(100000);
-					String password = String.valueOf(rand_pass);
+//					Random rand  = new Random();
+//					Integer rand_pass  = rand.nextInt(100000);
+					String password = rs.getString(4);
 					
 					MUser user = new MUser(getCtx(), rs.getInt(1), get_TrxName());
 					user.setPassword(password);

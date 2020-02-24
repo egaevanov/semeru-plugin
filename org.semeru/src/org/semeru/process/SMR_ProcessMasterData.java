@@ -974,6 +974,15 @@ public class SMR_ProcessMasterData extends SvrProcess{
 				boolean OK = sendIndividualMail(user.getAD_User_ID(), data.Password);
 				
 				if(OK) {
+					
+					StringBuilder UpdatePass = new StringBuilder();
+					UpdatePass.append("UPDATE semerulite.Customer ");
+					UpdatePass.append(" SET passtring = '"+data.Password+"'");
+					UpdatePass.append(" WHERE email = '"+user.getEMail()+"'");
+					
+					DB.executeUpdate(UpdatePass.toString(), get_TrxName());
+
+					
 					rs = "Perubahan Password Berhasil";
 				}else {
 					rs = Error;

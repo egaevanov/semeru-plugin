@@ -5,8 +5,10 @@ import java.util.List;
 
 import org.adempiere.base.IColumnCallout;
 import org.adempiere.base.IColumnCalloutFactory;
+import org.compiere.model.MUser;
 import org.semeru.mrp.callout.SM_CallOutMPS;
 import org.semeru.mrp.callout.SM_CalloutProdPlan;
+import org.semeru.mrp.callout.SM_CalloutUser;
 import org.semeru.mrp.model.I_SM_MPS;
 import org.semeru.mrp.model.I_SM_Product_Plan;
 /**
@@ -28,6 +30,8 @@ public class SMR_CallOutFactory implements IColumnCalloutFactory {
 			list.add (new SM_CalloutProdPlan());
 		}else if (tableName.equals(I_SM_MPS.Table_Name)){
 			list.add (new SM_CallOutMPS());
+		}else if(tableName.equals(MUser.Table_Name)) {
+			list.add(new SM_CalloutUser());
 		}
 		return list != null ? list.toArray(new IColumnCallout[0])
 				: new IColumnCallout[0];

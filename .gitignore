@@ -1,5 +1,11 @@
 # Compiled class file
 *.class
+org.semeru\bin\org\semeru\*
+org.semeru\bin\org\semeru\model\*.class
+org.semeru\bin\org\semeru\model\validator\*.class
+org.semeru\bin\org\semeru\pos\webui\form\*.class
+org.semeru\bin\org\semeru\process\*.class
+org.semeru\bin\org\semeru\utils\*.class
 
 # Log file
 *.log

@@ -7,6 +7,7 @@ import org.compiere.model.I_C_Order;
 import org.compiere.model.MAllocationLine;
 import org.compiere.model.MInvoice;
 import org.compiere.model.MPayment;
+import org.compiere.model.MUser;
 import org.compiere.model.PO;
 import org.compiere.util.CLogger;
 import org.osgi.service.event.Event;
@@ -55,6 +56,8 @@ public class SMR_ValidatorFactory extends AbstractEventHandler{
 				msg = SM_AllocationLineValidator.executeMAllocationLineEvent(event, getPO(event));
 			}else if (getPO(event).get_TableName().equals(MPayment.Table_Name)) {
 				msg = SM_PaymentValidator.executePaymentValidatorEvent(event, getPO(event));
+			}else if (getPO(event).get_TableName().equals(MUser.Table_Name)) {
+//				msg = SM_UserValidator.executeUserValidatorEvent(event, getPO(event));
 			}
 
 
@@ -90,6 +93,10 @@ public class SMR_ValidatorFactory extends AbstractEventHandler{
 		registerTableEvent(IEventTopics.DOC_BEFORE_COMPLETE, MInvoice.Table_Name);
 		//SEMERULite - Payment
 		registerTableEvent(IEventTopics.DOC_BEFORE_COMPLETE, MPayment.Table_Name);
+		
+		
+		registerTableEvent(IEventTopics.PO_AFTER_NEW, MUser.Table_Name);
+		registerTableEvent(IEventTopics.PO_AFTER_CHANGE, MUser.Table_Name);
 
 		
 	}
