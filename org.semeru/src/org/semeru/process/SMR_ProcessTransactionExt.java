@@ -424,6 +424,8 @@ public class SMR_ProcessTransactionExt extends SvrProcess {
 				pay.setPayAmt(detail.Amount);
 				pay.setC_Currency_ID(dataHeader.C_Currency_ID);
 				pay.setC_Charge_ID(detail.C_Charge_ID);
+				pay.set_CustomColumn("CreatedBy", dataHeader.CreatedBy);
+				pay.set_CustomColumn("C_POS_ID", dataHeader.C_POS_ID);
 				pay.saveEx();
 				
 				if(pay != null){
@@ -626,7 +628,9 @@ public class SMR_ProcessTransactionExt extends SvrProcess {
 					pay.setTenderType(MPayment.TENDERTYPE_Cash);
 					pay.setPayAmt(dataHeader.PayAmt);
 					pay.setC_Currency_ID(Inv.getC_Currency_ID());
-					pay.setC_Invoice_ID(Inv.getC_Invoice_ID());				
+					pay.setC_Invoice_ID(Inv.getC_Invoice_ID());		
+					pay.set_CustomColumn("CreatedBy", dataHeader.CreatedBy);
+					pay.set_CustomColumn("C_POS_ID", dataHeader.C_POS_ID);
 					pay.saveEx();			
 					
 				}
@@ -1280,6 +1284,8 @@ public class SMR_ProcessTransactionExt extends SvrProcess {
 			POrder.setSalesRep_ID(dataHeader.SalesRep_ID);
 			POrder.setIsTaxIncluded(pList.isTaxIncluded());
 			POrder.setDocAction(MOrder.DOCACTION_Complete);
+			POrder.set_CustomColumn("CreatedBy", dataHeader.CreatedBy);
+			POrder.set_CustomColumn("C_POS_ID", dataHeader.C_POS_ID);
 			POrder.saveEx();
 			
 			

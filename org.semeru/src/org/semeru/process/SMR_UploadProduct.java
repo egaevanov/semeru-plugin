@@ -95,7 +95,6 @@ public class SMR_UploadProduct extends SvrProcess{
 				JsonArray json = new JsonArray();
 				JsonParser parser = new JsonParser();
 			    json = parser.parse(JSonString).getAsJsonArray();
-	//		    json = asd.getAsJsonObject();		    
 			    
 		    	SMR_Model_ProductStock[] DataMaps = gson.fromJson(json.toString(), SMR_Model_ProductStock[].class);
 		    	
@@ -112,7 +111,7 @@ public class SMR_UploadProduct extends SvrProcess{
 				System.out.println("Prod. Type : "+DataMap.ProductType);
 				System.out.println("Purchase Price : "+DataMap.PurchasePrice);
 				System.out.println("Sales Price : "+DataMap.SalesPrice);
-				System.out.println("WholeSales Price : "+DataMap.WholeSalerPrice);
+				System.out.println("WholeSales Price : 	"+DataMap.WholeSalerPrice);
 				System.out.println("Qty Count : "+DataMap.QuantityCount);
 				System.out.println("Tax Type : "+DataMap.TaxType);
 				System.out.println("UOM Value : "+DataMap.UOM_Value);
@@ -124,7 +123,7 @@ public class SMR_UploadProduct extends SvrProcess{
 				tempProdStock.setIsImportStock(false);
 				tempProdStock.setLocator_Value(DataMap.LocatorValue);
 				tempProdStock.setProduct_Name(DataMap.Product_Name);
-				tempProdStock.setProduct_Value(DataMap.Product_Value);
+				tempProdStock.setProduct_Value(AD_Org_ID.toString()+"-"+DataMap.Product_Value);
 				tempProdStock.setProductCategory_Value(DataMap.ProductCategoryKey);
 				tempProdStock.setProductType(DataMap.ProductType);
 				tempProdStock.set_CustomColumn("process_id", p_Process_ID);
@@ -155,12 +154,14 @@ public class SMR_UploadProduct extends SvrProcess{
 				MProduct product = CreatePRoduct(tempProdStock);
 				
 				if(product == null) {
+					rslt = "ERROR";
 					rollback();
 				}
 	    	
 		    	}
 	    	}
 		} catch (Exception e) {
+			rslt = "ERROR";
 			rollback();
 		}
 		 finally {

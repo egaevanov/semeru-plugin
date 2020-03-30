@@ -153,9 +153,9 @@ public class SMR_ProcessMasterData extends SvrProcess{
 				    	rslt = createProductPricing(AD_Client_ID, AD_Org_ID, data);
 
 				    }else if(posType.equals("T")){
-				    	SMR_Model_POSSetup data = gson.fromJson(json.toString(), SMR_Model_POSSetup.class);
+//				    	SMR_Model_POSSetup data = gson.fromJson(json.toString(), SMR_Model_POSSetup.class);
 
-				    	rslt = CreatePOSSetup(AD_Client_ID, AD_Org_ID, data);
+//				    	rslt = CreatePOSSetup(AD_Client_ID, AD_Org_ID, data);
 				    }else if(posType.equals("C")){
 				    	SMR_Model_User data = gson.fromJson(json.toString(), SMR_Model_User.class);
 				    	
@@ -631,6 +631,8 @@ public class SMR_ProcessMasterData extends SvrProcess{
 			boolean IsValid = DataSetupValidation.IsValidDataMaster(AD_Client_ID,AD_Org_ID, X_M_Sales_Locator.Table_Name, X_M_Sales_Locator.COLUMNNAME_Name, data.Name);
 	
 			if(IsValid || data.M_Sales_Locator_ID > 0){
+				
+				System.out.println(data.M_Sales_Locator_ID);
 			
 				X_M_Sales_Locator SalesLocator = new X_M_Sales_Locator(getCtx(), data.M_Sales_Locator_ID, get_TrxName());
 				

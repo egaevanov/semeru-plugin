@@ -23,13 +23,15 @@ public class SMR_Model_PettyCash {
 	public String IsReceipt;
 	public Integer C_BankAccount_ID;
 	public BigDecimal PayAmt;
+	public Integer CreatedBy;
+	public Integer C_POS_ID;
 
 	public SMR_Model_PettyCash(String IsActive, Integer AD_Org_ID,
 			String DateInvoiced, Integer C_BPartner_ID,
 			Integer C_BPartner_Location_ID, Integer M_PriceList_ID,
 			Integer C_Currency_ID, String PaymentRule,
 			Integer C_PaymentTerm_ID, String Description,String IsReceipt,
-			Integer C_BankAccount_ID,BigDecimal PayAmt) {
+			Integer C_BankAccount_ID,BigDecimal PayAmt,Integer CreatedBy, Integer C_POS_ID) {
 	
 		this.IsActive = IsActive;		
 		this.AD_Org_ID = AD_Org_ID;
@@ -44,6 +46,8 @@ public class SMR_Model_PettyCash {
 		this.IsReceipt = IsReceipt;
 		this.C_BankAccount_ID = C_BankAccount_ID;
 		this.PayAmt = PayAmt;
+		this.CreatedBy = CreatedBy;
+		this.C_POS_ID = C_POS_ID;
 		
 	}
 

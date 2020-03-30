@@ -5,6 +5,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 
+import org.compiere.model.MLocator;
 import org.compiere.process.ProcessInfoParameter;
 import org.compiere.process.SvrProcess;
 import org.compiere.util.DB;
@@ -93,6 +94,10 @@ public class SMR_ProcessSetup extends SvrProcess {
 //					setup.setM_Warehouse_ID(data.M_Warehouse_ID);
 					setup.set_CustomColumn("M_Sales_Locator_ID", data.M_Sales_Locator_ID);
 					setup.setM_Locator_ID(data.M_Locator_ID);
+					
+					MLocator loc = new MLocator(getCtx(), data.M_Locator_ID, get_TrxName());
+					setup.setM_Warehouse_ID(loc.getM_Warehouse_ID());
+					
 					setup.setC_BankAccount_ID(data.C_BankAccount_ID);
 					setup.setM_PriceList_ID(data.M_PriceList_ID);
 					setup.saveEx();

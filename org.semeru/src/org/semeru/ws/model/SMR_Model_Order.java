@@ -33,13 +33,16 @@ public class SMR_Model_Order {
 	public BigDecimal DiscountAmt;
 	public String POReference;
 	public Integer CashMethod_ID;
+	public Integer CreatedBy;
+	public Integer C_POS_ID;
+	
 
 	
 	public SMR_Model_Order(String IsActive, String OrderReference,Integer C_BPartner_ID, Integer C_BPartner_Location_ID,
 			String DateOrdered, Integer M_Warehouse_ID, Integer SalesRep_ID,Integer M_PriceList_ID, Integer PaymentRule, 
 			Integer C_Currency_ID,Integer C_PaymentTerm_ID, BigDecimal Grandtotal,String DeliveryViaRule, String Description,
 			String IsPickUP,Integer C_TaxCategory_ID, Integer C_BankAccount_ID,Integer M_Sales_Locator_ID,String IsDiscount, 
-			BigDecimal DiscountAmt,String POReference, Integer CashMethod_ID) {
+			BigDecimal DiscountAmt,String POReference, Integer CashMethod_ID, Integer CreatedBy, Integer C_POS_ID) {
 
 		this.IsActive = IsActive;
 		this.OrderReference = OrderReference;
@@ -63,6 +66,8 @@ public class SMR_Model_Order {
 		this.DiscountAmt = DiscountAmt;
 		this.POReference = POReference;
 		this.CashMethod_ID = CashMethod_ID;
+		this.CreatedBy = CreatedBy;
+		this.C_POS_ID = C_POS_ID;
 		
 	}
 

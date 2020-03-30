@@ -51,6 +51,8 @@ public class SMR_ProcessEmailActiveUser extends SvrProcess{
 		SQLGetUser.append(" LEFT JOIN mob_trx_registration mob ON mob.user_email = ad.name");
 		SQLGetUser.append(" LEFT JOIN semerulite.customer cus ON cus.email = mob.user_email");
 		SQLGetUser.append(" WHERE mob.IsEmailed = 'N'");
+		SQLGetUser.append(" AND mob.IsCreated = 'Y'");
+
 
 		
 		

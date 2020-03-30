@@ -346,7 +346,7 @@ private String generateInitialData(int AD_Client_ID,int AD_Org_ID, String value,
 					
 					StringBuilder SQLGetElement = new StringBuilder();
 					SQLGetElement.append("SELECT C_Element_ID");
-					SQLGetElement.append(" FROM C_Element ");
+					SQLGetElement.append(" FROM adempiere.C_Element ");
 					SQLGetElement.append(" WHERE AD_Client_ID = "+ AD_Client_ID );
 					
 					Integer Element_ID = DB.getSQLValueEx(null, SQLGetElement.toString());
@@ -379,7 +379,7 @@ private String generateInitialData(int AD_Client_ID,int AD_Org_ID, String value,
 					
 					StringBuilder SQLGetParent = new StringBuilder();
 					SQLGetParent.append("SELECT C_ElementValue_ID ");
-					SQLGetParent.append(" FROM C_ElementValue ");
+					SQLGetParent.append(" FROM adempiere.C_ElementValue ");
 					SQLGetParent.append(" WHERE Name = 'Bank' ");
 					SQLGetParent.append(" AND AD_Client_ID = "+ AD_Client_ID);
 					Integer parent_ID = DB.getSQLValueEx(get_TrxName(), SQLGetParent.toString());	
@@ -431,7 +431,7 @@ private String generateInitialData(int AD_Client_ID,int AD_Org_ID, String value,
 				user.setC_BPartner_Location_ID(BPLoc.getC_BPartner_Location_ID());
 				user.saveEx();
 				
-				MUserRoles userRole = new MUserRoles(getCtx(), user.getAD_User_ID(), 1000008, get_TrxName());
+				MUserRoles userRole = new MUserRoles(getCtx(), user.getAD_User_ID(), 1000000, get_TrxName());
 				userRole.saveEx();
 				
 				if(InitialOrg != null){
@@ -585,7 +585,7 @@ private String Contract (boolean IsNewCust, Boolean IsPerpanjangan,Boolean IsUpg
 			user.setC_BPartner_Location_ID(BPLoc.getC_BPartner_Location_ID());
 			user.saveEx();
 			
-			MUserRoles userRole = new MUserRoles(getCtx(), user.getAD_User_ID(), 1000008, get_TrxName());
+			MUserRoles userRole = new MUserRoles(getCtx(), user.getAD_User_ID(), 1000000, get_TrxName());
 			userRole.saveEx();
 			
 			Env.reset(false);	

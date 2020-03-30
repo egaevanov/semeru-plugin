@@ -290,8 +290,8 @@ public class WImageUpload extends ImageUpload implements EventListener<Event>,Di
 		BufferedOutputStream out = null;
 		MClient client = new MClient(null, AD_Client_ID, null);
 	
-		SAVE_PATH = "/root/idempiere.server.product.linux.gtkx86_64/images/";
-		AKSES_PATH ="http://192.168.88.18/";
+		SAVE_PATH = "/opt/idempiere/images/";
+		AKSES_PATH ="http://149.129.247.135/";
 		
 //		SAVE_PATH = "D:\\imagetest\\";
 //		AKSES_PATH ="D:\\imagetest";

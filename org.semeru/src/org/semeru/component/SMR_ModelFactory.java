@@ -10,6 +10,7 @@ import org.compiere.model.I_C_Invoice;
 import org.compiere.model.I_C_POS;
 import org.compiere.model.PO;
 import org.compiere.util.Env;
+import org.semeru.model.I_I_Brand_Upload;
 import org.semeru.model.I_I_Master_Temp;
 import org.semeru.model.I_I_Product_Stock;
 import org.semeru.model.I_I_Setup_Temp;
@@ -51,6 +52,8 @@ public class SMR_ModelFactory implements IModelFactory{
 		mapTableModels.put(I_C_Invoice.Table_Name, "org.semeru.model.MInvoiceSemeru");
 		mapTableModels.put(I_C_POS.Table_Name, "org.semeru.model.X_C_POS");
 		mapTableModels.put(I_I_Setup_Temp.Table_Name, "org.semeru.model.X_I_Setup_Temp");
+		mapTableModels.put(I_I_Brand_Upload.Table_Name, "org.semeru.model.X_I_Brand_Upload");
+
 
 		
 			

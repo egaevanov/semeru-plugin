@@ -162,6 +162,8 @@ public class SMR_ProcessTransaction  extends SvrProcess{
 					ord.setDocAction(MOrder.DOCACTION_Complete);
 				    ord.set_ValueNoCheck("M_Sales_Locator_ID", data.M_Sales_Locator_ID);		
 				    ord.set_ValueNoCheck("C_BankAccount_ID", data.C_BankAccount_ID);
+				    ord.set_CustomColumn("CreatedBy", data.CreatedBy);
+				    ord.set_CustomColumn("C_POS_ID", data.C_POS_ID);
 					 
 				    Boolean IsMultiLocator = false;
 				    
